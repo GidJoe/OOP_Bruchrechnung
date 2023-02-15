@@ -9,27 +9,38 @@ public class Bruch {
     public String toString() {
         return zaehler + " / " + nenner;
     }
-    // Konstruktor?
 
+    // Konstruktor?
     // Methode zum Addieren
     public Bruch add(Bruch bruch) {
         this.zaehler = (this.zaehler * bruch.nenner) + (this.nenner * bruch.zaehler);
         this.nenner = this.nenner * bruch.nenner;
         int teiler = ggt(this.zaehler, this.nenner);
-        this.zaehler = this.zaehler/teiler;
-        this.nenner = this.nenner/teiler;
+        this.zaehler = this.zaehler / teiler;
+        this.nenner = this.nenner / teiler;
 
         return this;
 
     }
 
+    public Bruch add(int zaehler, int nenner) {
+        zaehler = (zaehler * nenner) + (nenner * zaehler);
+        nenner = nenner * nenner;
+        int teiler = ggt(zaehler, nenner);
+        zaehler = zaehler/teiler;
+        nenner = nenner/teiler;
+
+        return this;
+    }
+
+
     // Methode zum Subtrahieren
     public Bruch subtrahieren(Bruch bruch) {
-        this.zaehler = (this.zaehler * bruch.nenner) - (this.nenner * bruch.zaehler);
+        zaehler = (zaehler * bruch.nenner) - (this.nenner * bruch.zaehler);
         this.nenner = this.nenner * bruch.nenner;
         int teiler = ggt(this.zaehler, this.nenner);
-        this.zaehler = this.zaehler/teiler;
-        this.nenner = this.nenner/teiler;
+        this.zaehler = this.zaehler / teiler;
+        this.nenner = this.nenner / teiler;
 
 
         return this;
@@ -42,8 +53,8 @@ public class Bruch {
         this.nenner *= bruch.nenner;
 
         int teiler = ggt(this.zaehler, this.nenner);
-        this.zaehler = this.zaehler/teiler;
-        this.nenner = this.nenner/teiler;
+        this.zaehler = this.zaehler / teiler;
+        this.nenner = this.nenner / teiler;
 
         return this;
     }
@@ -54,8 +65,8 @@ public class Bruch {
         this.zaehler *= bruch.nenner;
         this.nenner *= bruch.zaehler;
         int teiler = ggt(this.zaehler, this.nenner);
-        this.zaehler = this.zaehler/teiler;
-        this.nenner = this.nenner/teiler;
+        this.zaehler = this.zaehler / teiler;
+        this.nenner = this.nenner / teiler;
 
         return this;
 
